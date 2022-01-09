@@ -1,0 +1,31 @@
+<body>
+    <div id="mouseoverevent"> Put your mouse over me!</div>
+    <div class="theclass"> I am text</div>
+    <div> I am also text</div>
+    <div class="theclass"> I don't know what I'm doing</div>
+
+    <script>
+
+        function changecolor() {
+            var change = document.getElementsByClassName("theclass");
+            for (var i = 0; i < change.length; i++) {
+                change[i].style.color = "red";
+                change[i].style.fontWeight = "bold";
+            }
+        }
+        
+
+            function res() {
+                var change = document.getElementsByClassName("theclass");
+                for (var i = 0; i < change.length; i++) {
+                    change[i].style.color = "black";
+                    change[i].style.fontwWeight = "normal";
+                }
+            }
+
+            var listen = document.getElementById("mouseoverevent");
+            listen.addEventListener("mouseover", changecolor);
+            listen.addEventListener("mouseout", res);
+
+    </script>
+</body>

@@ -1,0 +1,24 @@
+<body>
+    <button id="clicker">
+        Click ME!
+    </button>
+    <p>
+        You have clicked the button <span id="spanclicker"> 0 times </span>
+        <script>
+            var clicks = 0;
+
+            function clickclat() {
+                spancliker = document.getElementById('spanclicker');
+                clicks++;
+
+                if (clicks == 1) {
+                    spancliker.innerHTML = clicks + " time";
+                }
+                else {
+                    spancliker.innerHTML = clicks + " times";
+                }
+            }
+            var callfunction = document.getElementById("clicker");
+            callfunction.addEventListener("click", clickclat)
+        </script>
+</body>

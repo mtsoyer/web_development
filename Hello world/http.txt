@@ -1,0 +1,221 @@
+http:
+html allows us to structure the data, but not how to display them
+the Web browser chooses how to display them
+in html, elements can have bodies or elements within elements
+it consists of a head and a body. the head is the information about the content, and the body is the content
+the head contains the title for example
+TAGS:
+<! DOCTYPE html>
+
+shows the version of html the browser will be reading. html5 is declared like that ^
+it must always be the first line
+we then have the html element
+<html> 
+after that, the body of the program is within here, then we closing tag
+</html>
+
+within the head we have the description:
+<title> of the Web page
+<link> which adds css data, icons and stylesheets to our code
+<meta> which is for metadata which describes our webpage. it could also be what search engines find
+<script> to add javascript and dynamic usage to our page
+
+the relationship between html and http is that when a browser requests for a document, in the body of the response will be html which and is displayed in the browser. the html code will be in the body, filling the browsers request to get the html document in the first place
+A simple document could be:
+<! DOCTYPE html>
+<html>
+				<head>
+								<title> Hello world </title>
+				</head>
+				<body>
+								Hello World! 
+				</body>
+</html>
+
+Title is a tag that's the title of your Web page. in the body we just put in raw text 
+
+the DOCTYPE again tells us the version of html 
+<html> is the root of the document 
+<head> which is the title of the document, with the meta data or linking to other projects 
+<body> for the actual content 
+
+<p>:
+this is paragraph. it can be anywhere in the text and has a vertical space before and after it 
+
+remember, html is the structure but the browser decides HOW to display the contents. blank spaces, breaks and more are ignored by browsers like chrome 
+
+<h#>:
+from 1 to 6, the size decreases. the paragraphs beneath it don't 
+
+<b>, <i>:
+<b> boldens the text and <i> italicises it. but we can use <strong> for a substitute for bold, even though it doesn't say the browser should make the text bold, but make it strong or important. the same with <em>. 
+
+<hr>, <br>:
+<hr> puts a visible line between the content and <br>just puts a blank line, such as:
+<p> I ran into the dog house </p>
+<hr>
+<p> he ran away from the dog house </p>
+<br>
+<p> he's safe now </p>
+
+<div>:
+a container like structure where you can put additional stuff inside of it. usually for headers and titles, or menus or photo galleries or ads.:
+<div> 
+<p> I'm inside of a div
+</div>
+
+<span>:
+opposite to the div in that its usually within another element like <p>, and it contains smaller bits of other content. it works like <div> but with smaller content 
+<p>
+<span> head tags </span>
+<span> body tags </span>
+ </p>
+
+symbols:
+we can import special symbols that have a function, with & and ; at the end:
+&nbsp; - adds an extra space between words or paragraphs. the browser usually condenses multiple spaces into one without this present
+
+&lt; - gives us <
+&gt; - gives us >
+&amp; - gives us & 
+
+we can add more information on an html element using attributes:
+it's always within the first tag
+it usually comes with a name, and a value pair:
+nameofattribute="valueofattribute"
+a broad example:
+<p name="value"> This is text </p>
+
+title attributes:
+provides a title for an elment, and when we hover over the element a text will appear above the cursor with the title:
+<h1 title="welcome!"> Test title </h1>
+
+sytle attributes:
+these are used to change the visual respresentation of an element. multiple key vlaue pairs will be used separeted by a semi-colon
+eg.
+<h1 style="color:red; text-transform:capitalize"> this is a heading </h1>
+
+this makes the words in title case, and in red
+style is an attribute, and we have key value pairs: 
+color:red
+we seperate key value pairs with a semi colon
+and we have another key value that is 
+transform:capitalize
+which transfroms the text into red, and makes it into title case. note, this is still the same font size as h1
+
+other style attribues:
+background-color:red, yellow, etc
+which is the background color of the text
+
+font-family:verdana, courier
+which is the font
+
+font-size: 12px, 4in, 200%
+we can change the font size using inc hes, pixles or percentage
+
+text-align: center, left, right
+we can change the alignment of the text
+
+we can then use the spaan tag like this:
+hello <span style="color:white; background-color:green;font-family:verdana;font-size:200%"> world! </span>
+
+which makes the text white, background green, differnt font and a large size. this applies to world! and changes the styling of world!
+
+how to simpyfy this:
+an id and class:
+id:
+provide a unique identifyer to refer to a specific element. such as headers and footers and appearance
+
+class:
+referes to elements within an html document and applies this formatting to all elements in the class
+
+an id is only for one element in the entire page, while a class can have many elements
+
+eg:
+instead of
+<p style="color:blue"> 1 is an odd number </p>
+
+<p style="color:white; background-color:blue"> 2 is an even number </p>
+and repeating this for all numbers under ten
+we can create a class called odd:
+<p class="odd"> 1 is an odd number</P>
+
+and we can put the even things into an even class. we have to tell it what odd and even are in the header of the html document, using the style tag
+
+<head>
+<style>
+.odd{
+color:blue;
+}
+.even{
+color:white;
+background-color:blue;
+}
+</style>
+this isn't being applied to something in the header. it's infomration on how to style things using the class called odd or even. a period before a name shows it's a class name
+if you wanted to change one key value tag, you can do it in the header and it'll change it for all things that use that class
+
+remember to call the class in style using:
+<p class="odd">
+
+and to separate each attribute in a class with a ;
+
+we can use CSS - cascading style sheets - to further change the appearance of the content in an html document. it's standard is W3C (world wide Web consortium) 
+
+how it works:
+html documents are received from a server using http
+within that document, can there be css. but there can also be a separate css file that the browser requests for, too
+
+only when everything is downloaded will the page be displayed 
+
+ideally, only one set of css styles will be used per element
+
+use:
+using style as an attribute in tag line (inline) such as
+<p style="name">
+or
+making a class with a style attribute(internal) 
+we can make a tag have a specific style in a class, for example:
+<style>
+h1 {
+color:red} 
+</style>
+which means every h1 header will be read 
+in this example, h1 is the CSS selector - the thing that the following property values will be applied to 
+or
+external ways
+we can have an external css file that's downloaded
+we link the css file in the header of the Html file. we link it:
+for example 
+<link href="moviestyles.css/>
+the browser requests another file, movietsykes.css
+and within that file could be:
+h1 {
+color:red}
+
+which does the same thing as before
+
+our css selectors could be:
+an element, such as <p> or <h1>
+classes - making a class such as 
+.adresses{...}
+
+lists:
+ordered lists are ordered numerically:
+1. Jan
+2. Mar
+3. Apr
+is ordered using <ol>
+<ol>
+<li> Jan </li>
+<li> Mar </li>
+etc
+
+and unordered list doesn't number them, it bullets them, and doesn't order them. it's displayed as its made using the same syntax as an ordered list, but with <ul></ul>
+
+we can change how the bullet point looks using style 
+eg
+<.. style="list-style-type:circle">
+
+there are different types:
+disc, circle, square and non

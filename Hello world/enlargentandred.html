@@ -1,0 +1,29 @@
+<head>
+    <script src="jq.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>
+            a
+        </li>
+        <li>
+            b
+        </li>
+        <li>
+            c
+        </li>
+        <li>
+            d
+        </li>
+    </ul>
+    <script>
+        $("li").hover(function () {
+            $(this).css("color", "red")
+            $(this).css("font-size", "120%")
+        }, function () {
+            $(this).css("color", "black")
+            $(this).css("font-size", "80%")
+        })
+    </script>
+</body>

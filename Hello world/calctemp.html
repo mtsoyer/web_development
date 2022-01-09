@@ -1,0 +1,96 @@
+<head>
+  <script src="./calctemp_files/jquery.js.download"></script>
+
+  <style>
+    button {
+      font-size: 200%;
+      width: 40px;
+    }
+
+    input {
+      font-size: 14px;
+      height: 40px;
+      text-align: right;
+    }
+
+    .screen {
+      font-size: 14px;
+      height: 40px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table>
+    <tbody>
+      <tr>
+        <td colspan="4">
+          <input id="display" name="display" disabled="" value="">
+          </input>
+        </td>
+      </tr>
+
+      <tr>
+        <td><button id="button1" name="ints" value="1">1</button></td>
+        <td><button id="button2" name="ints" value="2">2</button></td>
+        <td><button id="button3" name="ints" value="3">3</button></td>
+        <td><button id="addButton" name="function">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="button4" name="ints" value="4">4</button></td>
+        <td><button id="button5" name="ints" value="5">5</button></td>
+        <td><button id="button6" name="ints" value="6">6</button></td>
+        <td><button id="subtractButton" name="function">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="button7" name="ints" value="7">7</button></td>
+        <td><button id="button8" name="ints" value="8">8</button></td>
+        <td><button id="button9" name="ints" value="9">9</button></td>
+        <td><button id="multiplyButton" name="function">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="clearButton" name="function">C</button></td>
+        <td><button id="button0" value="0" name="ints">0</button></td>
+        <td><button id="equalsButton" name="function">=</button></td>
+        <td><button id="divideButton" name="function">/</button></td>
+      </tr>
+
+
+
+    </tbody>
+  </table>
+
+  <span id="output">
+    <!-- Use this span for writing debug messages or anything else you think will help! -->
+  </span>
+  <script>
+    var string = JSON.parse(localStorage.string)
+    $("button[name='ints']").click(function () {
+      string = string + $("button[name='ints']").val()
+      JSON.stringify("localStorage.string", string)
+      $("input").val(string)
+    })
+
+    $("#clearButton").click(function () {
+      string = ""
+      JSON.stringify("localStorage.string", string)
+    })
+
+    $("#equalsButton").click(function () {
+      $("input").val(string)
+      JSON.stringify("localStorage.string", string)
+
+    })
+
+    $("#divideButton").click(function(){
+      var number = str(string)
+      number
+    })
+
+
+  </script>
+</body>
+
+</html>

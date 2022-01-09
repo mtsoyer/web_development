@@ -1,0 +1,17 @@
+<body>
+    <div>
+        You have visited the page <span id= "reprot"> </span> times
+    </div>
+    <script>
+        var timesvisited = 0;
+        if (localStorage.timesvisited){
+            timesvisited = parseInt(localStorage.timesvisited);
+        }
+        timesvisited += 1;
+        localStorage.setItem("timesvisited",  timesvisited);
+
+        var report = document.getElementById("report");
+        report.innerHTML = timesvisited;
+
+    </script>
+</body>

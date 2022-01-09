@@ -1,0 +1,22 @@
+<body>
+    <input id="namev"></input>
+    <div> Hello 
+        <span id="namea"> guest</span>
+    </div>
+
+    <script>
+        function nameHandler(e)
+        {
+            if (e.keyCode == 13)
+            {
+                var namevalue = document.getElementById("namev");
+                var nameactual = document.getElementById("namea");
+                nameactual.innerHTML = namevalue.value;
+                nameactual.style.color = "white";
+                nameactual.style.backgroundColor = "cyan";
+            }
+        }
+
+        document.addEventListener("keyup", nameHandler)
+    </script>
+</body>

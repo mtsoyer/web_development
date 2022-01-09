@@ -1,0 +1,26 @@
+<head>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <button id="clicker"> Click Me</button>
+    You have clicked the button: 
+    <span id="numclicks"> 0 times</span>
+    <script>
+        var clicks = 0;
+        function getclicks()
+        {
+            clicks++;
+            var numclickspan = $("#numclicks");
+            if (clicks ==1 )
+            {
+                numclickspan.html("once");
+            }
+            else{
+                numclickspan.html(clicks + " times");
+            }
+        }
+
+        var buttonclicker = $("#clicker")
+        buttonclicker.click(getclicks)
+    </script>
+</body>
